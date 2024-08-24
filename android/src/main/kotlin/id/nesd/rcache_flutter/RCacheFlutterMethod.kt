@@ -3,7 +3,7 @@ package id.nesd.rcache_flutter
 internal class RCacheFlutterMethod {
 
     companion object {
-        const val channel: String = "id.nesd.rcache"
+        const val channel: String = "id.nesd.rcache_flutter"
     }
 
     class Key {
