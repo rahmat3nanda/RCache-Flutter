@@ -4,7 +4,7 @@ import UIKit
 public class RCacheFlutterPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: RCacheFlutterMethod.channel.rawValue, binaryMessenger: registrar.messenger())
-        let instance = RCachePlugin()
+        let instance = RCacheFlutterPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
     
