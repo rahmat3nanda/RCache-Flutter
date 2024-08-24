@@ -68,7 +68,7 @@ internal class RCacheFlutterHandler {
             result(RCache.common.readDictionary(key: RCache.Key(key)))
         case RCacheFlutterMethod.Key.Read.double.rawValue:
             result(RCache.common.readDouble(key: RCache.Key(key)))
-        case RCacheFlutterMethod.Key.Read.double.rawValue:
+        case RCacheFlutterMethod.Key.remove.rawValue:
             RCache.common.remove(key: RCache.Key(key))
             result("Success saving")
         default:
@@ -134,7 +134,7 @@ internal class RCacheFlutterHandler {
             result(RCache.credentials.readDictionary(key: RCache.Key(key)))
         case RCacheFlutterMethod.Key.Read.double.rawValue:
             result(RCache.credentials.readDouble(key: RCache.Key(key)))
-        case RCacheFlutterMethod.Key.Read.double.rawValue:
+        case RCacheFlutterMethod.Key.remove.rawValue:
             RCache.credentials.remove(key: RCache.Key(key))
             result("Success saving")
         default:
