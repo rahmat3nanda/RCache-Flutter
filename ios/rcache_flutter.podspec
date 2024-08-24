@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 A new Flutter project.
                        DESC
-  s.homepage         = 'https://github.com/rahmat3nanda/RCache-Swift.git'
+  s.homepage         = 'https://github.com/rahmat3nanda/RCache-Flutter.git'
   s.license          = { :type => 'MIT', :file => '../LICENSE' }
   s.author           = { 'Rahmat Trinanda Pramudya Amar' => 'rahmat3nanda@gmail.com' }
   s.source           = { :path => '.' }
