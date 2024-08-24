@@ -2,10 +2,10 @@ PODS:
   - Flutter (1.0.0)
   - integration_test (0.0.1):
     - Flutter
-  - RCache (1.0.1)
+  - RCache (1.0.2)
   - rcache_flutter (1.0.0):
     - Flutter
-    - RCache (= 1.0.1)
+    - RCache (= 1.0.2)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -13,7 +13,7 @@ DEPENDENCIES:
   - rcache_flutter (from `.symlinks/plugins/rcache_flutter/ios`)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - RCache
 
 EXTERNAL SOURCES:
@@ -27,9 +27,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
-  RCache: ad5e7b2c15664d53bc326cf8316becb00bc18658
-  rcache_flutter: 64d7bf56616a1f232b729d2ce259f8aae267e036
+  RCache: 69d9996090423ea352c62bc37fc92f1a463d1fe2
+  rcache_flutter: 9117df0760a4abda1415563bc3c25369f63eb02f
 
-PODFILE CHECKSUM: b2f67eb1d99d486fb420639325d73326a5e08690
+PODFILE CHECKSUM: 0b817cbcec4b30b352441150f3d8a115b9054225
 
 COCOAPODS: 1.15.2

@@ -21,5 +21,5 @@ A new Flutter project.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
   s.swift_version = '5.0'
 
-  s.dependency 'RCache', '1.0.1'
+  s.dependency 'RCache', '1.0.2'
 end
