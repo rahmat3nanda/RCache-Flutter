@@ -36,11 +36,11 @@ flutter:
     platforms:
       android:
         package: id.nesd.rcache_flutter
-        pluginClass: RcacheFlutterPlugin
+        pluginClass: RCacheFlutterPlugin
       ios:
-        pluginClass: RcacheFlutterPlugin
+        pluginClass: RCacheFlutterPlugin
       macos:
-        pluginClass: RcacheFlutterPlugin
+        pluginClass: RCacheFlutterPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

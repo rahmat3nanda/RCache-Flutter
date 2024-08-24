@@ -1,10 +1,10 @@
 import Flutter
 import UIKit
 
-public class RcacheFlutterPlugin: NSObject, FlutterPlugin {
+public class RCacheFlutterPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "rcache_flutter", binaryMessenger: registrar.messenger())
-    let instance = RcacheFlutterPlugin()
+    let instance = RCacheFlutterPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 
