@@ -39,6 +39,8 @@ List<dynamic> rAutoCastList(List<dynamic> source) {
   return source.map((element) {
     if (element is String) {
       return rAutoCast(element);
+    } else {
+      return element;
     }
   }).toList();
 }
