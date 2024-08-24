@@ -48,7 +48,7 @@ class CredentialsMethodChannelRCache extends RCachePlatform
     try {
       return await methodChannel.invokeMethod(
         RCacheMethod.key.save.bool,
-        rArgs(type: RCacheMethod.key.credentials, key: key, value: bool),
+        rArgs(type: RCacheMethod.key.credentials, key: key, value: value),
       );
     } on PlatformException catch (e) {
       return Future.error(e);
