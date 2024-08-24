@@ -47,11 +47,18 @@ android {
 
     defaultConfig {
         minSdk = 21
+        consumerProguardFiles 'proguard-rules.pro'
+
+        sourceSets.main {
+            jni.srcDirs = []
+            jniLibs.srcDir "libs"
+        }
     }
 
     dependencies {
         testImplementation("org.jetbrains.kotlin:kotlin-test")
         testImplementation("org.mockito:mockito-core:5.0.0")
+        implementation fileTree(include: ['*.jar'], dir: 'libs')
     }
 
     testOptions {
