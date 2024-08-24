@@ -3,14 +3,14 @@
 # Run `pod lib lint rcache_flutter.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'RCacheFlutter'
+  s.name             = 'rcache_flutter'
   s.version          = '1.0.0'
   s.summary          = 'A new Flutter project.'
   s.description      = <<-DESC
 A new Flutter project.
                        DESC
   s.homepage         = 'https://github.com/rahmat3nanda/RCache-Swift.git'
-  s.license          = { :file => '../LICENSE' }
+  s.license          = { :type => 'MIT', :file => '../LICENSE' }
   s.author           = { 'Rahmat Trinanda Pramudya Amar' => 'rahmat3nanda@gmail.com' }
   s.source           = { :path => '.' }
   s.source_files = 'rcache_flutter/Sources/rcache_flutter/**/*'
