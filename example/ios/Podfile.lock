@@ -28,7 +28,7 @@ SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
   RCache: ad5e7b2c15664d53bc326cf8316becb00bc18658
-  rcache_flutter: 04ceb4bfdf2f50753bec7837435c37ff6ede7525
+  rcache_flutter: 64d7bf56616a1f232b729d2ce259f8aae267e036
 
 PODFILE CHECKSUM: b2f67eb1d99d486fb420639325d73326a5e08690
 

@@ -13,7 +13,7 @@ A new Flutter project.
   s.license          = { :type => 'MIT', :file => '../LICENSE' }
   s.author           = { 'Rahmat Trinanda Pramudya Amar' => 'rahmat3nanda@gmail.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'rcache_flutter/Sources/rcache_flutter/**/*'
+  s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
   s.platform = :ios, '12.0'
 
