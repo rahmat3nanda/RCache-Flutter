@@ -1,15 +1,13 @@
 package id.nesd.rcache_flutter
 
-import androidx.annotation.NonNull
-
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 
-/** RcacheFlutterPlugin */
-class RcacheFlutterPlugin: FlutterPlugin, MethodCallHandler {
+/** RCacheFlutterPlugin */
+class RCacheFlutterPlugin: FlutterPlugin, MethodCallHandler {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
