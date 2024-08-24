@@ -1,10 +1,10 @@
 name: rcache_flutter
 description: "A new Flutter project."
-version: 0.0.1
-homepage:
+version: 1.0.0
+homepage: "https://github.com/rahmat3nanda/RCache-Flutter"
 
 environment:
-  sdk: ^3.6.0-167.0.dev
+  sdk: '>=3.4.3 <4.0.0'
   flutter: '>=3.3.0'
 
 dependencies:
