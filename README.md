@@ -1,5 +1,7 @@
 # RCache
 
+[<img src="https://pub.dev/static/hash-l15m0lvm/img/pub-dev-logo.svg" alt="pub logo" height="20">](https://pub.dev/packages/rcache_flutter)
+
 RCache is a lightweight Flutter plugin designed to simplify data storage across iOS, macOS, and Android. It offers an intuitive API for managing general data and securely handling credentials. On iOS and macOS, it integrates with UserDefaults and Keychain, while on Android, it utilizes SharedPreferences and EncryptedSharedPreferences. RCache streamlines persistent storage management, making it easy to handle data securely and efficiently across platforms.
 
 ## Features
