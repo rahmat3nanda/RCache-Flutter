@@ -49,7 +49,8 @@ abstract class RCachePlatform extends PlatformInterface {
 
   Future<void> saveInteger({required int value, required RCacheKey key});
 
-  Future<void> saveArray({required List<dynamic> array, required RCacheKey key});
+  Future<void> saveArray(
+      {required List<dynamic> array, required RCacheKey key});
 
   Future<void> saveDictionary({
     required Map<String, dynamic> dictionary,
