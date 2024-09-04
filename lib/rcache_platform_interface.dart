@@ -89,7 +89,7 @@ abstract class RCachePlatform extends PlatformInterface implements RCaching {
   /// // RCaching.instance.saveArray([101, "string", true], key: RCacheKey("array"));
   /// ```
   @override
-  Future<void> saveArray<T>(List<T> array, {required RCacheKey key});
+  Future<void> saveArray(List<dynamic> array, {required RCacheKey key});
 
   /// Method for storing a Map with a defined key.
   ///
@@ -98,7 +98,7 @@ abstract class RCachePlatform extends PlatformInterface implements RCaching {
   /// // RCaching.instance.saveMap({"bool": true, "integer": 101}, key: RCacheKey("map"));
   /// ```
   @override
-  Future<void> saveMap<T>(Map<String, T> map, {required RCacheKey key});
+  Future<void> saveMap(Map<String, dynamic> map, {required RCacheKey key});
 
   /// Method for storing a Double with a defined key.
   ///
@@ -152,7 +152,7 @@ abstract class RCachePlatform extends PlatformInterface implements RCaching {
   /// // RCaching.instance.readArray(key: RCacheKey("array"));
   /// ```
   @override
-  Future<List<T>?> readArray<T>({required RCacheKey key});
+  Future<List<dynamic>?> readArray({required RCacheKey key});
 
   /// Method for getting a Map with a defined key.
   ///

@@ -42,7 +42,7 @@ abstract class RCaching {
   /// ```
   /// // RCaching.instance.saveArray([101, "string", true], key: RCacheKey("array"));
   /// ```
-  Future<void> saveArray<T>(List<T> array, {required RCacheKey key});
+  Future<void> saveArray(List<dynamic> array, {required RCacheKey key});
 
   /// Method for storing a Map with a defined key.
   ///
@@ -50,7 +50,7 @@ abstract class RCaching {
   /// ```
   /// // RCaching.instance.saveMap({"bool": true, "integer": 101}, key: RCacheKey("map"));
   /// ```
-  Future<void> saveMap<T>(Map<String, T> map, {required RCacheKey key});
+  Future<void> saveMap(Map<String, dynamic> map, {required RCacheKey key});
 
   /// Method for storing a Double with a defined key.
   ///
@@ -98,7 +98,7 @@ abstract class RCaching {
   /// ```
   /// // RCaching.instance.readArray(key: RCacheKey("array"));
   /// ```
-  Future<List<T>?> readArray<T>({required RCacheKey key});
+  Future<List<dynamic>?> readArray({required RCacheKey key});
 
   /// Method for getting a Map with a defined key.
   ///
