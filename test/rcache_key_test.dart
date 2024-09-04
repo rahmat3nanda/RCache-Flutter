@@ -1,7 +1,7 @@
 import 'package:rcache_flutter/rcache_key.dart';
 
 class RCacheKeyTest {
-  static RCacheKey get data => RCacheKey("data");
+  static RCacheKey get uint8List => RCacheKey("uint8List");
 
   static RCacheKey get string => RCacheKey("string");
 
@@ -11,7 +11,7 @@ class RCacheKeyTest {
 
   static RCacheKey get array => RCacheKey("array");
 
-  static RCacheKey get dictionary => RCacheKey("dictionary");
+  static RCacheKey get map => RCacheKey("map");
 
   static RCacheKey get double => RCacheKey("double");
 }
