@@ -22,7 +22,7 @@ internal object RCacheFlutterHandler {
         }
 
         when (call.method) {
-            RCacheFlutterMethod.Key.Save.data -> {
+            RCacheFlutterMethod.Key.Save.uint8List -> {
                 val byteArray: ByteArray? = call.argument<ByteArray>("value")
                 if (byteArray == null) {
                     result.error("3", "Invalid format", null)
@@ -52,7 +52,7 @@ internal object RCacheFlutterHandler {
                 result.success("Success saving")
             }
 
-            RCacheFlutterMethod.Key.Save.dictionary -> {
+            RCacheFlutterMethod.Key.Save.map -> {
                 RCache.common.save(call.argument<Map<String, Any>>("value")!!, RCache.Key(key))
                 result.success("Success saving")
             }
@@ -62,8 +62,8 @@ internal object RCacheFlutterHandler {
                 result.success("Success saving")
             }
 
-            RCacheFlutterMethod.Key.Read.data -> {
-                result.success(RCache.common.readData(RCache.Key(key)))
+            RCacheFlutterMethod.Key.Read.uint8List -> {
+                result.success(RCache.common.readByteArray(RCache.Key(key)))
             }
 
             RCacheFlutterMethod.Key.Read.string -> {
@@ -79,11 +79,11 @@ internal object RCacheFlutterHandler {
             }
 
             RCacheFlutterMethod.Key.Read.array -> {
-                result.success(RCache.common.readArray(RCache.Key(key)))
+                result.success(RCache.common.readArray<Any>(RCache.Key(key)))
             }
 
-            RCacheFlutterMethod.Key.Read.dictionary -> {
-                result.success(RCache.common.readDictionary(RCache.Key(key)))
+            RCacheFlutterMethod.Key.Read.map -> {
+                result.success(RCache.common.readMap<Any>(RCache.Key(key)))
             }
 
             RCacheFlutterMethod.Key.Read.double -> {
@@ -117,7 +117,7 @@ internal object RCacheFlutterHandler {
         }
 
         when (call.method) {
-            RCacheFlutterMethod.Key.Save.data -> {
+            RCacheFlutterMethod.Key.Save.uint8List -> {
                 val byteArray: ByteArray? = call.argument<ByteArray>("value")
                 if (byteArray == null) {
                     result.error("3", "Invalid format", null)
@@ -147,7 +147,7 @@ internal object RCacheFlutterHandler {
                 result.success("Success saving")
             }
 
-            RCacheFlutterMethod.Key.Save.dictionary -> {
+            RCacheFlutterMethod.Key.Save.map -> {
                 RCache.credentials.save(call.argument<Map<String, Any>>("value")!!, RCache.Key(key))
                 result.success("Success saving")
             }
@@ -157,8 +157,8 @@ internal object RCacheFlutterHandler {
                 result.success("Success saving")
             }
 
-            RCacheFlutterMethod.Key.Read.data -> {
-                result.success(RCache.credentials.readData(RCache.Key(key)))
+            RCacheFlutterMethod.Key.Read.uint8List -> {
+                result.success(RCache.credentials.readByteArray(RCache.Key(key)))
             }
 
             RCacheFlutterMethod.Key.Read.string -> {
@@ -174,11 +174,11 @@ internal object RCacheFlutterHandler {
             }
 
             RCacheFlutterMethod.Key.Read.array -> {
-                result.success(RCache.credentials.readArray(RCache.Key(key)))
+                result.success(RCache.credentials.readArray<Any>(RCache.Key(key)))
             }
 
-            RCacheFlutterMethod.Key.Read.dictionary -> {
-                result.success(RCache.credentials.readDictionary(RCache.Key(key)))
+            RCacheFlutterMethod.Key.Read.map -> {
+                result.success(RCache.credentials.readMap<Any>(RCache.Key(key)))
             }
 
             RCacheFlutterMethod.Key.Read.double -> {
