@@ -1,6 +1,6 @@
 //
 //  RCacheFlutterHandler.swift
-//  rcache
+//  rcache_flutter
 //
 //  Created by Rahmat Trinanda Pramudya Amar on 24/08/24.
 //
@@ -29,7 +29,7 @@ internal class RCacheFlutterHandler {
         }
         
         switch call.method {
-        case RCacheFlutterMethod.Key.Save.data.rawValue:
+        case RCacheFlutterMethod.Key.Save.uint8List.rawValue:
             if let data = args["value"] as? FlutterStandardTypedData {
                 RCache.common.save(data: data.data, key: RCache.Key(key))
                 result("Success saving")
@@ -48,13 +48,13 @@ internal class RCacheFlutterHandler {
         case RCacheFlutterMethod.Key.Save.array.rawValue:
             RCache.common.save(array: args["value"] as! [Any], key: RCache.Key(key))
             result("Success saving")
-        case RCacheFlutterMethod.Key.Save.dictionary.rawValue:
+        case RCacheFlutterMethod.Key.Save.map.rawValue:
             RCache.common.save(dictionary: args["value"] as! [String:Any], key: RCache.Key(key))
             result("Success saving")
         case RCacheFlutterMethod.Key.Save.double.rawValue:
             RCache.common.save(double: args["value"] as! Double, key: RCache.Key(key))
             result("Success saving")
-        case RCacheFlutterMethod.Key.Read.data.rawValue:
+        case RCacheFlutterMethod.Key.Read.uint8List.rawValue:
             result(RCache.common.readData(key: RCache.Key(key)))
         case RCacheFlutterMethod.Key.Read.string.rawValue:
             result(RCache.common.readString(key: RCache.Key(key)))
@@ -64,7 +64,7 @@ internal class RCacheFlutterHandler {
             result(RCache.common.readInteger(key: RCache.Key(key)))
         case RCacheFlutterMethod.Key.Read.array.rawValue:
             result(RCache.common.readArray(key: RCache.Key(key)))
-        case RCacheFlutterMethod.Key.Read.dictionary.rawValue:
+        case RCacheFlutterMethod.Key.Read.map.rawValue:
             result(RCache.common.readDictionary(key: RCache.Key(key)))
         case RCacheFlutterMethod.Key.Read.double.rawValue:
             result(RCache.common.readDouble(key: RCache.Key(key)))
@@ -95,7 +95,7 @@ internal class RCacheFlutterHandler {
         }
         
         switch call.method {
-        case RCacheFlutterMethod.Key.Save.data.rawValue:
+        case RCacheFlutterMethod.Key.Save.uint8List.rawValue:
             if let data = args["value"] as? FlutterStandardTypedData {
                 RCache.credentials.save(data: data.data, key: RCache.Key(key))
                 result("Success saving")
@@ -114,13 +114,13 @@ internal class RCacheFlutterHandler {
         case RCacheFlutterMethod.Key.Save.array.rawValue:
             RCache.credentials.save(array: args["value"] as! [Any], key: RCache.Key(key))
             result("Success saving")
-        case RCacheFlutterMethod.Key.Save.dictionary.rawValue:
+        case RCacheFlutterMethod.Key.Save.map.rawValue:
             RCache.credentials.save(dictionary: args["value"] as! [String:Any], key: RCache.Key(key))
             result("Success saving")
         case RCacheFlutterMethod.Key.Save.double.rawValue:
             RCache.credentials.save(double: args["value"] as! Double, key: RCache.Key(key))
             result("Success saving")
-        case RCacheFlutterMethod.Key.Read.data.rawValue:
+        case RCacheFlutterMethod.Key.Read.uint8List.rawValue:
             result(RCache.credentials.readData(key: RCache.Key(key)))
         case RCacheFlutterMethod.Key.Read.string.rawValue:
             result(RCache.credentials.readString(key: RCache.Key(key)))
@@ -130,7 +130,7 @@ internal class RCacheFlutterHandler {
             result(RCache.credentials.readInteger(key: RCache.Key(key)))
         case RCacheFlutterMethod.Key.Read.array.rawValue:
             result(RCache.credentials.readArray(key: RCache.Key(key)))
-        case RCacheFlutterMethod.Key.Read.dictionary.rawValue:
+        case RCacheFlutterMethod.Key.Read.map.rawValue:
             result(RCache.credentials.readDictionary(key: RCache.Key(key)))
         case RCacheFlutterMethod.Key.Read.double.rawValue:
             result(RCache.credentials.readDouble(key: RCache.Key(key)))
