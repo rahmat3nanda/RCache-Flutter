@@ -2,74 +2,71 @@ import 'dart:typed_data';
 
 import 'package:rcache_flutter/rcache_key.dart';
 
+/// Interface for RCache.
 abstract class RCaching {
-  /// Method for storing data with a defined key.
+  /// Method for storing Uint8List with a defined key.
   ///
   /// Example:
   /// ```
-  /// // RCaching.instance.saveData(data: data, key: RCacheKey("data"));
+  /// // RCaching.instance.saveUint8List(Uint8List(10), key: RCacheKey("data"));
   /// ```
-  Future<void> saveData({required Uint8List data, required RCacheKey key});
+  Future<void> saveUint8List(Uint8List data, {required RCacheKey key});
 
   /// Method for storing a String with a defined key.
   ///
   /// Example:
   /// ```
-  /// // RCaching.instance.saveString(string: "data string", key: RCacheKey("string"));
+  /// // RCaching.instance.saveString("data string", key: RCacheKey("string"));
   /// ```
-  Future<void> saveString({required String string, required RCacheKey key});
+  Future<void> saveString(String string, {required RCacheKey key});
 
   /// Method for storing a Boolean with a defined key.
   ///
   /// Example:
   /// ```
-  /// // RCaching.instance.saveBool(value: true, key: RCacheKey("bool"));
+  /// // RCaching.instance.saveBool(true, key: RCacheKey("bool"));
   /// ```
-  Future<void> saveBool({required bool value, required RCacheKey key});
+  Future<void> saveBool(bool value, {required RCacheKey key});
 
   /// Method for storing an Integer with a defined key.
   ///
   /// Example:
   /// ```
-  /// // RCaching.instance.saveInteger(value: 101, key: RCacheKey("integer"));
+  /// // RCaching.instance.saveInteger(101, key: RCacheKey("integer"));
   /// ```
-  Future<void> saveInteger({required int value, required RCacheKey key});
+  Future<void> saveInteger(int value, {required RCacheKey key});
 
   /// Method for storing an Array with a defined key.
   ///
   /// Example:
   /// ```
-  /// // RCaching.instance.saveArray(array: [101, "string", true], key: RCacheKey("array"));
+  /// // RCaching.instance.saveArray([101, "string", true], key: RCacheKey("array"));
   /// ```
-  Future<void> saveArray(
-      {required List<dynamic> array, required RCacheKey key});
+  Future<void> saveArray<T>(List<T> array, {required RCacheKey key});
 
   /// Method for storing a Map with a defined key.
   ///
   /// Example:
   /// ```
-  /// // RCaching.instance.saveDictionary(dictionary: {"bool": true, "integer": 101}, key: RCacheKey("dictionary"));
+  /// // RCaching.instance.saveMap({"bool": true, "integer": 101}, key: RCacheKey("map"));
   /// ```
-  Future<void> saveDictionary({
-    required Map<String, dynamic> dictionary,
-    required RCacheKey key,
-  });
+  Future<void> saveMap<T>(Map<String, T> map, {required RCacheKey key});
 
   /// Method for storing a Double with a defined key.
   ///
   /// Example:
   /// ```
-  /// // RCaching.instance.saveDouble(value: 2.0, key: RCacheKey("double"));
+  /// // RCaching.instance.saveDouble(2.0, key: RCacheKey("double"));
   /// ```
-  Future<void> saveDouble({required double value, required RCacheKey key});
+  Future<void> saveDouble(double value, {required RCacheKey key});
 
-  /// Method for getting data with a defined key.
+  /// Method for getting Uint8List with a defined key.
   ///
   /// Example:
   /// ```
-  /// // RCaching.instance.readData(key: RCacheKey("data"));
+  /// // RCaching.instance.readUint8List(key: RCacheKey("data"));
   /// ```
-  Future<Uint8List?> readData({required RCacheKey key});
+  Future<Uint8List?> readUint8List({required RCacheKey key});
 
   /// Method for getting a String with a defined key.
   ///
@@ -101,15 +98,15 @@ abstract class RCaching {
   /// ```
   /// // RCaching.instance.readArray(key: RCacheKey("array"));
   /// ```
-  Future<List<dynamic>?> readArray({required RCacheKey key});
+  Future<List<T>?> readArray<T>({required RCacheKey key});
 
   /// Method for getting a Map with a defined key.
   ///
   /// Example:
   /// ```
-  /// // RCaching.instance.readDictionary(key: RCacheKey("dictionary"));
+  /// // RCaching.instance.readMap(key: RCacheKey("map"));
   /// ```
-  Future<Map<String, dynamic>?> readDictionary({required RCacheKey key});
+  Future<Map<String, dynamic>?> readMap({required RCacheKey key});
 
   /// Method for getting a Double with a defined key.
   ///
@@ -123,7 +120,7 @@ abstract class RCaching {
   ///
   /// Example:
   /// ```
-  /// // RCaching.instance.remove(key: RCacheKey("dictionary"));
+  /// // RCaching.instance.remove(key: RCacheKey("myKey"));
   /// ```
   Future<void> remove({required RCacheKey key});
 
