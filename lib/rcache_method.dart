@@ -28,6 +28,6 @@ class RCacheMethodKeyRead {
   String bool = "readBool";
   String integer = "readInteger";
   String array = "readArray";
-  String map = "saveMap";
+  String map = "readMap";
   String double = "readDouble";
 }
