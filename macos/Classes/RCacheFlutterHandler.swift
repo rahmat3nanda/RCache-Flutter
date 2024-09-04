@@ -5,7 +5,7 @@
 //  Created by Rahmat Trinanda Pramudya Amar on 24/08/24.
 //
 
-import Flutter
+import FlutterMacOS
 import RCache
 
 internal class RCacheFlutterHandler {
