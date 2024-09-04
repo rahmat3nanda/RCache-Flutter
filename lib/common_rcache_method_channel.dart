@@ -21,7 +21,7 @@ class CommonMethodChannelRCache extends RCachePlatform {
   Future<void> saveUint8List(Uint8List data, {required RCacheKey key}) async {
     try {
       return await methodChannel.invokeMethod(
-        RCacheMethod.key.save.data,
+        RCacheMethod.key.save.uint8List,
         rArgs(type: RCacheMethod.key.common, key: key, value: data),
       );
     } on PlatformException catch (e) {
@@ -112,7 +112,7 @@ class CommonMethodChannelRCache extends RCachePlatform {
       {required RCacheKey key}) async {
     try {
       return await methodChannel.invokeMethod(
-        RCacheMethod.key.save.dictionary,
+        RCacheMethod.key.save.map,
         rArgs(type: RCacheMethod.key.common, key: key, value: map),
       );
     } on PlatformException catch (e) {
@@ -148,7 +148,7 @@ class CommonMethodChannelRCache extends RCachePlatform {
   Future<Uint8List?> readUint8List({required RCacheKey key}) async {
     try {
       return await methodChannel.invokeMethod(
-        RCacheMethod.key.read.data,
+        RCacheMethod.key.read.uint8List,
         rArgs(type: RCacheMethod.key.common, key: key),
       );
     } on PlatformException catch (e) {
@@ -239,7 +239,7 @@ class CommonMethodChannelRCache extends RCachePlatform {
   Future<Map<String, dynamic>?> readMap({required RCacheKey key}) async {
     try {
       Map<Object?, Object?>? value = await methodChannel.invokeMethod(
-        RCacheMethod.key.read.dictionary,
+        RCacheMethod.key.read.map,
         rArgs(type: RCacheMethod.key.common, key: key),
       );
       return Future.value(

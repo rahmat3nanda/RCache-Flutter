@@ -13,21 +13,21 @@ class RCacheMethodKey {
 }
 
 class RCacheMethodKeySave {
-  String data = "saveData";
+  String uint8List = "saveUint8List";
   String string = "saveString";
   String bool = "saveBool";
   String integer = "saveInteger";
   String array = "saveArray";
-  String dictionary = "saveDictionary";
+  String map = "saveMap";
   String double = "saveDouble";
 }
 
 class RCacheMethodKeyRead {
-  String data = "readData";
+  String uint8List = "readUint8List";
   String string = "readString";
   String bool = "readBool";
   String integer = "readInteger";
   String array = "readArray";
-  String dictionary = "readDictionary";
+  String map = "saveMap";
   String double = "readDouble";
 }
