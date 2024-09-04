@@ -17,23 +17,23 @@ internal enum RCacheFlutterMethod: String {
         case clear = "clear"
         
         internal enum Save: String {
-            case data = "saveData"
+            case uint8List = "saveUint8List"
             case string = "saveString"
             case bool = "saveBool"
             case integer = "saveInteger"
             case array = "saveArray"
-            case dictionary = "saveDictionary"
+            case map = "saveMap"
             case double = "saveDouble"
             
         }
         
         internal enum Read: String {
-            case data = "readData"
+            case uint8List = "readUint8List"
             case string = "readString"
             case bool = "readBool"
             case integer = "readInteger"
             case array = "readArray"
-            case dictionary = "readDictionary"
+            case map = "readMap"
             case double = "readDouble"
         }
     }
