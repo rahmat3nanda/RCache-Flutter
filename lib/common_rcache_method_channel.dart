@@ -4,19 +4,21 @@ import 'package:rcache_flutter/rcache_helper.dart';
 import 'package:rcache_flutter/rcache_key.dart';
 import 'package:rcache_flutter/rcache_method.dart';
 import 'package:rcache_flutter/rcache_platform_interface.dart';
-import 'package:rcache_flutter/rcaching.dart';
 
-/// An implementation of [RCachePlatform] that uses method channels.
-class CommonMethodChannelRCache extends RCachePlatform implements RCaching {
+/// An implementation of [RCachePlatform] that uses method channels for regular data.
+class CommonMethodChannelRCache extends RCachePlatform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
   final methodChannel = MethodChannel(RCacheMethod.channel);
 
+  /// Method for storing Uint8List with a defined key.
+  ///
+  /// Example:
+  /// ```
+  /// // RCache.common.saveUint8List(Uint8List(10), key: RCacheKey("data"));
+  /// ```
   @override
-  Future<void> saveData({
-    required Uint8List data,
-    required RCacheKey key,
-  }) async {
+  Future<void> saveUint8List(Uint8List data, {required RCacheKey key}) async {
     try {
       return await methodChannel.invokeMethod(
         RCacheMethod.key.save.data,
@@ -27,11 +29,14 @@ class CommonMethodChannelRCache extends RCachePlatform implements RCaching {
     }
   }
 
+  /// Method for storing a String with a defined key.
+  ///
+  /// Example:
+  /// ```
+  /// // RCache.common.saveString("data string", key: RCacheKey("string"));
+  /// ```
   @override
-  Future<void> saveString({
-    required String string,
-    required RCacheKey key,
-  }) async {
+  Future<void> saveString(String string, {required RCacheKey key}) async {
     try {
       return await methodChannel.invokeMethod(
         RCacheMethod.key.save.string,
@@ -42,8 +47,14 @@ class CommonMethodChannelRCache extends RCachePlatform implements RCaching {
     }
   }
 
+  /// Method for storing a Boolean with a defined key.
+  ///
+  /// Example:
+  /// ```
+  /// // RCache.common.saveBool(true, key: RCacheKey("bool"));
+  /// ```
   @override
-  Future<void> saveBool({required bool value, required RCacheKey key}) async {
+  Future<void> saveBool(bool value, {required RCacheKey key}) async {
     try {
       return await methodChannel.invokeMethod(
         RCacheMethod.key.save.bool,
@@ -54,8 +65,14 @@ class CommonMethodChannelRCache extends RCachePlatform implements RCaching {
     }
   }
 
+  /// Method for storing an Integer with a defined key.
+  ///
+  /// Example:
+  /// ```
+  /// // RCache.common.saveInteger(101, key: RCacheKey("integer"));
+  /// ```
   @override
-  Future<void> saveInteger({required int value, required RCacheKey key}) async {
+  Future<void> saveInteger(int value, {required RCacheKey key}) async {
     try {
       return await methodChannel.invokeMethod(
         RCacheMethod.key.save.integer,
@@ -66,11 +83,14 @@ class CommonMethodChannelRCache extends RCachePlatform implements RCaching {
     }
   }
 
+  /// Method for storing an Array with a defined key.
+  ///
+  /// Example:
+  /// ```
+  /// // RCache.common.saveArray([101, "string", true], key: RCacheKey("array"));
+  /// ```
   @override
-  Future<void> saveArray({
-    required List<dynamic> array,
-    required RCacheKey key,
-  }) async {
+  Future<void> saveArray(List array, {required RCacheKey key}) async {
     try {
       return await methodChannel.invokeMethod(
         RCacheMethod.key.save.array,
@@ -81,26 +101,33 @@ class CommonMethodChannelRCache extends RCachePlatform implements RCaching {
     }
   }
 
+  /// Method for storing a Map with a defined key.
+  ///
+  /// Example:
+  /// ```
+  /// // RCache.common.saveMap({"bool": true, "integer": 101}, key: RCacheKey("map"));
+  /// ```
   @override
-  Future<void> saveDictionary({
-    required Map<String, dynamic> dictionary,
-    required RCacheKey key,
-  }) async {
+  Future<void> saveMap(Map<String, dynamic> map,
+      {required RCacheKey key}) async {
     try {
       return await methodChannel.invokeMethod(
         RCacheMethod.key.save.dictionary,
-        rArgs(type: RCacheMethod.key.common, key: key, value: dictionary),
+        rArgs(type: RCacheMethod.key.common, key: key, value: map),
       );
     } on PlatformException catch (e) {
       return Future.error(e);
     }
   }
 
+  /// Method for storing a Double with a defined key.
+  ///
+  /// Example:
+  /// ```
+  /// // RCache.common.saveDouble(2.0, key: RCacheKey("double"));
+  /// ```
   @override
-  Future<void> saveDouble({
-    required double value,
-    required RCacheKey key,
-  }) async {
+  Future<void> saveDouble(double value, {required RCacheKey key}) async {
     try {
       return await methodChannel.invokeMethod(
         RCacheMethod.key.save.double,
@@ -111,8 +138,14 @@ class CommonMethodChannelRCache extends RCachePlatform implements RCaching {
     }
   }
 
+  /// Method for getting Uint8List with a defined key.
+  ///
+  /// Example:
+  /// ```
+  /// // RCache.common.readUint8List(key: RCacheKey("data"));
+  /// ```
   @override
-  Future<Uint8List?> readData({required RCacheKey key}) async {
+  Future<Uint8List?> readUint8List({required RCacheKey key}) async {
     try {
       return await methodChannel.invokeMethod(
         RCacheMethod.key.read.data,
@@ -123,6 +156,12 @@ class CommonMethodChannelRCache extends RCachePlatform implements RCaching {
     }
   }
 
+  /// Method for getting a String with a defined key.
+  ///
+  /// Example:
+  /// ```
+  /// // RCache.common.readString(key: RCacheKey("string"));
+  /// ```
   @override
   Future<String?> readString({required RCacheKey key}) async {
     try {
@@ -135,6 +174,12 @@ class CommonMethodChannelRCache extends RCachePlatform implements RCaching {
     }
   }
 
+  /// Method for getting a Boolean with a defined key.
+  ///
+  /// Example:
+  /// ```
+  /// // RCache.common.readBool(key: RCacheKey("bool"));
+  /// ```
   @override
   Future<bool?> readBool({required RCacheKey key}) async {
     try {
@@ -147,6 +192,12 @@ class CommonMethodChannelRCache extends RCachePlatform implements RCaching {
     }
   }
 
+  /// Method for getting an Integer with a defined key.
+  ///
+  /// Example:
+  /// ```
+  /// // RCache.common.readInteger(key: RCacheKey("integer"));
+  /// ```
   @override
   Future<int?> readInteger({required RCacheKey key}) async {
     try {
@@ -159,10 +210,16 @@ class CommonMethodChannelRCache extends RCachePlatform implements RCaching {
     }
   }
 
+  /// Method for getting an Array with a defined key.
+  ///
+  /// Example:
+  /// ```
+  /// // RCache.common.readArray(key: RCacheKey("array"));
+  /// ```
   @override
-  Future<List<dynamic>?> readArray({required RCacheKey key}) async {
+  Future<List?> readArray({required RCacheKey key}) async {
     try {
-      List<dynamic>? value = await methodChannel.invokeMethod(
+      List? value = await methodChannel.invokeMethod(
         RCacheMethod.key.read.array,
         rArgs(type: RCacheMethod.key.common, key: key),
       );
@@ -172,8 +229,14 @@ class CommonMethodChannelRCache extends RCachePlatform implements RCaching {
     }
   }
 
+  /// Method for getting a Map with a defined key.
+  ///
+  /// Example:
+  /// ```
+  /// // RCache.common.readMap(key: RCacheKey("map"));
+  /// ```
   @override
-  Future<Map<String, dynamic>?> readDictionary({required RCacheKey key}) async {
+  Future<Map<String, dynamic>?> readMap({required RCacheKey key}) async {
     try {
       Map<Object?, Object?>? value = await methodChannel.invokeMethod(
         RCacheMethod.key.read.dictionary,
@@ -187,6 +250,12 @@ class CommonMethodChannelRCache extends RCachePlatform implements RCaching {
     }
   }
 
+  /// Method for getting a Double with a defined key.
+  ///
+  /// Example:
+  /// ```
+  /// // RCache.common.readDouble(key: RCacheKey("double"));
+  /// ```
   @override
   Future<double?> readDouble({required RCacheKey key}) async {
     try {
@@ -199,6 +268,12 @@ class CommonMethodChannelRCache extends RCachePlatform implements RCaching {
     }
   }
 
+  /// Method for deleting data stored with a defined key.
+  ///
+  /// Example:
+  /// ```
+  /// // RCache.common.remove(key: RCacheKey("myKey"));
+  /// ```
   @override
   Future<void> remove({required RCacheKey key}) async {
     try {
@@ -211,6 +286,12 @@ class CommonMethodChannelRCache extends RCachePlatform implements RCaching {
     }
   }
 
+  /// Method for deleting all data stored via Caching.
+  ///
+  /// Example:
+  /// ```
+  /// // RCache.common.clear();
+  /// ```
   @override
   Future<void> clear() async {
     try {
