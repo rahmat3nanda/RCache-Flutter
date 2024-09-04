@@ -108,8 +108,10 @@ class CommonMethodChannelRCache extends RCachePlatform {
   /// // RCache.common.saveMap({"bool": true, "integer": 101}, key: RCacheKey("map"));
   /// ```
   @override
-  Future<void> saveMap(Map<String, dynamic> map,
-      {required RCacheKey key}) async {
+  Future<void> saveMap(
+    Map<String, dynamic> map, {
+    required RCacheKey key,
+  }) async {
     try {
       return await methodChannel.invokeMethod(
         RCacheMethod.key.save.map,
