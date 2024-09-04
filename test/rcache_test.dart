@@ -12,12 +12,12 @@ import 'rcache_key_test.dart';
 import 'rcache_value_model_test.dart';
 
 RCacheValueModelTest _values = RCacheValueModelTest(
-  data: Uint8List.fromList("RCache".codeUnits),
+  uint8List: Uint8List.fromList("RCache".codeUnits),
   string: "RCache",
   boolValue: false,
   intValue: 1,
   array: [1, "b", true],
-  dictionary: {"a": 1, "b": "c"},
+  map: {"a": 1, "b": "c"},
   doubleValue: 12.123,
 );
 
@@ -41,13 +41,13 @@ class MockRCachePlatform
   }
 
   @override
-  Future<Uint8List?> readData({required RCacheKey key}) {
-    return Future.value(_values.data);
+  Future<Uint8List?> readUint8List({required RCacheKey key}) {
+    return Future.value(_values.uint8List);
   }
 
   @override
-  Future<Map<String, dynamic>?> readDictionary({required RCacheKey key}) {
-    return Future.value(_values.dictionary);
+  Future<Map<String, dynamic>?> readMap({required RCacheKey key}) {
+    return Future.value(_values.map);
   }
 
   @override
@@ -72,44 +72,46 @@ class MockRCachePlatform
   }
 
   @override
-  Future<void> saveArray({required List array, required RCacheKey key}) {
+  Future<void> saveArray(List array, {required RCacheKey key}) {
     // TODO: implement saveArray
     throw UnimplementedError();
   }
 
   @override
-  Future<void> saveBool({required bool value, required RCacheKey key}) {
+  Future<void> saveBool(bool value, {required RCacheKey key}) {
     // TODO: implement saveBool
     throw UnimplementedError();
   }
 
   @override
-  Future<void> saveData({required Uint8List data, required RCacheKey key}) {
+  Future<void> saveUint8List(Uint8List data, {required RCacheKey key}) {
     // TODO: implement saveData
     throw UnimplementedError();
   }
 
   @override
-  Future<void> saveDictionary(
-      {required Map<String, dynamic> dictionary, required RCacheKey key}) {
+  Future<void> saveMap(
+    Map<String, dynamic> dictionary, {
+    required RCacheKey key,
+  }) {
     // TODO: implement saveDictionary
     throw UnimplementedError();
   }
 
   @override
-  Future<void> saveDouble({required double value, required RCacheKey key}) {
+  Future<void> saveDouble(double value, {required RCacheKey key}) {
     // TODO: implement saveDouble
     throw UnimplementedError();
   }
 
   @override
-  Future<void> saveInteger({required int value, required RCacheKey key}) {
+  Future<void> saveInteger(int value, {required RCacheKey key}) {
     // TODO: implement saveInteger
     throw UnimplementedError();
   }
 
   @override
-  Future<void> saveString({required String string, required RCacheKey key}) {
+  Future<void> saveString(String string, {required RCacheKey key}) {
     // TODO: implement saveString
     throw UnimplementedError();
   }
@@ -132,8 +134,8 @@ void main() {
     RCachePlatform.common = fakePlatform;
 
     expect(
-      await RCache.common.readData(key: RCacheKeyTest.data),
-      _values.data,
+      await RCache.common.readUint8List(key: RCacheKeyTest.uint8List),
+      _values.uint8List,
     );
     expect(
       await RCache.common.readString(key: RCacheKeyTest.string),
@@ -152,8 +154,8 @@ void main() {
       _values.array,
     );
     expect(
-      await RCache.common.readDictionary(key: RCacheKeyTest.dictionary),
-      _values.dictionary,
+      await RCache.common.readMap(key: RCacheKeyTest.map),
+      _values.map,
     );
     expect(
       await RCache.common.readDouble(key: RCacheKeyTest.double),
@@ -166,8 +168,8 @@ void main() {
     RCachePlatform.credentials = fakePlatform;
 
     expect(
-      await RCache.credentials.readData(key: RCacheKeyTest.data),
-      _values.data,
+      await RCache.credentials.readUint8List(key: RCacheKeyTest.uint8List),
+      _values.uint8List,
     );
     expect(
       await RCache.credentials.readString(key: RCacheKeyTest.string),
@@ -186,8 +188,8 @@ void main() {
       _values.array,
     );
     expect(
-      await RCache.credentials.readDictionary(key: RCacheKeyTest.dictionary),
-      _values.dictionary,
+      await RCache.credentials.readMap(key: RCacheKeyTest.map),
+      _values.map,
     );
     expect(
       await RCache.credentials.readDouble(key: RCacheKeyTest.double),
