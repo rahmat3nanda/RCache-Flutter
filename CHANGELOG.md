@@ -4,3 +4,6 @@
 
 ## 1.1.0
 * More stable performance and improved quality
+
+## 1.1.1
+* Bug Fixes and Security Improvements

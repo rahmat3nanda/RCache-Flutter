@@ -1,6 +1,6 @@
 name: rcache_flutter
 description: "A lightweight Flutter plugin for secure, efficient data storage across iOS, macOS, and Android platforms, simplifying persistent data management."
-version: 1.1.0
+version: 1.1.1
 homepage: "https://github.com/rahmat3nanda/RCache-Flutter"
 topics:
   - cache
