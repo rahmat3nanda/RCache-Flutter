@@ -18,7 +18,7 @@ RCache is a lightweight Flutter plugin designed to simplify data storage across 
 ```yaml
 dependencies:
    # Others dependencies
-  rcache_flutter: ^1.1.0
+  rcache_flutter: ^1.1.1
 ```
 2. Then run:
 ```shell
