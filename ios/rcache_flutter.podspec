@@ -21,5 +21,5 @@ A new Flutter project.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
 
-  s.dependency 'RCache', '1.0.3'
+  s.dependency 'RCache', '1.0.4'
 end
