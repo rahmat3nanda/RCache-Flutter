@@ -7,3 +7,6 @@
 
 ## 1.1.1
 * Bug Fixes and Security Improvements
+
+## 1.1.2
+* Bug Fixes and Improvements
