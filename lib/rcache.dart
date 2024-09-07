@@ -20,7 +20,7 @@ class RCache {
   static RCaching credentials = RCachePlatform.credentials;
 
   /// Method to delete all data for common and credential levels stored via RCache/RCaching.
-  static void clear() async {
+  static Future<void> clear() async {
     common.clear();
     credentials.clear();
   }
