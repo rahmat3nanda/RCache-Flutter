@@ -51,8 +51,8 @@ Map<String, dynamic> rAutoCastMap(Map<String, dynamic> source) {
       return MapEntry(key, rAutoCast(value));
     } else if (value is List) {
       return MapEntry(key, rAutoCastList(value));
-    } else if (value is Map<String, dynamic>) {
-      return MapEntry(key, rAutoCastMap(value));
+    } else if (value is Map) {
+      return MapEntry(key, rAutoCastMap(value.cast<String, dynamic>()));
     } else {
       return MapEntry(key, value);
     }
